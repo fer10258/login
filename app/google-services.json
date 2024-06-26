@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "849499404495",
+    "project_id": "login-e4b55",
+    "storage_bucket": "login-e4b55.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:849499404495:android:feebb64b7e76d207105fba",
+        "android_client_info": {
+          "package_name": "com.hata.login"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "849499404495-687hd4mg3697jtdn4brbobmn7r2tp0ha.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.hata.login",
+            "certificate_hash": "93f386d7e5758d159b88248318d75e12f4638679"
+          }
+        },
+        {
+          "client_id": "849499404495-f89c85760odpdp5vkk8jkr8p0hsr339j.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCC7kYF10ENbrAvAg0FE9DhILHuAWc9GfM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "849499404495-f89c85760odpdp5vkk8jkr8p0hsr339j.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
