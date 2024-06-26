@@ -1,10 +1,11 @@
 package com.hata.login.Presentation.HomeActivity;
 
 public interface HomeContract {
-    interface View{
-
+    interface View {
+        void changeLayoutText();
     }
-    interface Presenter{
+
+    interface Presenter {
 
     }
 }

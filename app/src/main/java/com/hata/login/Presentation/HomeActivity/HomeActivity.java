@@ -49,7 +49,7 @@ public class HomeActivity extends AppCompatActivity implements HomeContract.View
         //Database
         FirebaseDatabaseClass.getFirebaseDatabaseClassInstance();
 
-        presenter = new HomePresenter();
+        presenter = new HomePresenter(this);
 //        Intent intent = getIntent();
 //        String user = intent.getStringExtra("user");
 //        TextView tx = binding.homeTextview;
@@ -86,6 +86,12 @@ public void setGreeting(String username){
     public void onStop() {
         super.onStop();
         EventBus.getDefault().unregister(this);
+    }
+
+    @Override
+    public void changeLayoutText() {
+        String text = messageGreeting.getText().toString();
+        messageGreeting.setText(text + "Pelo amor de Deus funciona");
     }
 //    private void deleteUser() {
 //        String userId = mAuth.getCurrentUser().getUid();
