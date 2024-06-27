@@ -21,7 +21,7 @@ public class RegisterPresenter implements RegisterContract.Presenter {
 
     public RegisterPresenter(RegisterContract.View view) {
         this.view = view;
-        this.mAuth = FirebaseAuth.getInstance();
+        FirebaseRepository.getInstance().getDatabaseUser();
     }
 
     @Override

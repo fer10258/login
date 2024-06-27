@@ -19,6 +19,7 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.GoogleAuthProvider;
 import com.hata.login.R;
+import com.hata.login.Utils.FirebaseRepository;
 
 public class LoginPresenter implements LoginContract.Presenter {
     private static final String TAG = "GoogleActivity";
@@ -58,8 +59,7 @@ public class LoginPresenter implements LoginContract.Presenter {
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
                 if (task.isSuccessful()) {
-                    FirebaseUser user = mAuth.getCurrentUser();
-                    view.showLoginSuccess(user.getEmail());
+                    view.showLoginSuccess(FirebaseRepository.getInstance().getCurrentUserEmail());
                     view.navigateToHome();
                 } else {
                     view.showLoginFailure("Google authentication failed.");
