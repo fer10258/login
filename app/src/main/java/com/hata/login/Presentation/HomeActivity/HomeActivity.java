@@ -26,7 +26,7 @@ import com.hata.login.databinding.ActivityHomeBinding;
 import org.greenrobot.eventbus.EventBus;
 import org.greenrobot.eventbus.Subscribe;
 
-public class HomeActivity extends AppCompatActivity implements HomeContract.View{
+public class HomeActivity extends AppCompatActivity implements HomeContract.View {
 
     private ActivityHomeBinding binding;
     ImageButton lockButton;
@@ -35,7 +35,6 @@ public class HomeActivity extends AppCompatActivity implements HomeContract.View
     private FirebaseAuth mAuth;
     TextView messageGreeting;
     HomePresenter presenter;
-
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -49,14 +48,13 @@ public class HomeActivity extends AppCompatActivity implements HomeContract.View
         //Database
         FirebaseDatabaseClass.getFirebaseDatabaseClassInstance();
 
+        // Inicialize o TextView
+        messageGreeting = binding.homeTextview;
+
+        // Inicialize o presenter após a inicialização do TextView
         presenter = new HomePresenter(this);
-//        Intent intent = getIntent();
-//        String user = intent.getStringExtra("user");
-//        TextView tx = binding.homeTextview;
-//        tx.setText(user);
 
-
-        //Declaração de funções:
+        // Declaração de funções:
         lockScreen();
     }
 
@@ -70,11 +68,10 @@ public class HomeActivity extends AppCompatActivity implements HomeContract.View
         });
     }
 
-@Subscribe
-public void setGreeting(String username){
-    messageGreeting = binding.homeTextview;
-    messageGreeting.setText("Hello, " + username);
-}
+    @Subscribe
+    public void setGreeting(String username) {
+        messageGreeting.setText("Hello, " + username);
+    }
 
     @Override
     public void onStart() {
@@ -91,19 +88,6 @@ public void setGreeting(String username){
     @Override
     public void changeLayoutText() {
         String text = messageGreeting.getText().toString();
-        messageGreeting.setText(text + "Pelo amor de Deus funciona");
+        messageGreeting.setText(text + " Pelo amor de Deus funciona");
     }
-//    private void deleteUser() {
-//        String userId = mAuth.getCurrentUser().getUid();
-//
-//
-//        myRef.child("users").
-//                child(userId).
-//                removeValue().addOnCompleteListener(new OnCompleteListener<Void>() {
-//                    @Override
-//                    public void onComplete(@NonNull Task<Void> task) {
-//                        Toast.makeText(HomeActivity.this, "Successful delete!", Toast.LENGTH_SHORT).show();
-//                    }
-//                });
-//    }
 }
