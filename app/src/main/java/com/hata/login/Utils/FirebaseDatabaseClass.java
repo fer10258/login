@@ -12,17 +12,15 @@ import com.google.firebase.database.ValueEventListener;
 import org.greenrobot.eventbus.EventBus;
 
 public class FirebaseDatabaseClass {
-    static FirebaseDatabaseClass INSTANCE;
-    FirebaseDatabase firebaseDatabase;
-    DatabaseReference myRef;
+    private static FirebaseDatabaseClass INSTANCE;
+    private FirebaseDatabase firebaseDatabase;
+    private DatabaseReference myRef;
 
     public static FirebaseDatabaseClass getFirebaseDatabaseClassInstance() {
         if (INSTANCE == null) {
             INSTANCE = new FirebaseDatabaseClass();
-        } else {
-            return INSTANCE;
         }
-        return null;
+        return INSTANCE;
     }
 
     public FirebaseDatabase getDatabaseInstance() {
@@ -41,16 +39,21 @@ public class FirebaseDatabaseClass {
 
     public void getDatabaseUserData() {
         String userId = FirebaseAuth.getInstance().getCurrentUser().getUid();
-        myRef.child("users").child(userId).addValueEventListener(new ValueEventListener() {
+        getDatabaseReference().child("users").child(userId).addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
-                String username = snapshot.child("name").getValue().toString();
-                EventBus.getDefault().post(username);
+                if (snapshot.child("name").exists()) {
+                    String username = snapshot.child("name").getValue(String.class);
+                    EventBus.getDefault().post(username);
+                } else {
+                    // Handle case where "name" doesn't exist
+                    EventBus.getDefault().post("Name not found");
+                }
             }
 
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
-
+                // Handle database error
             }
         });
     }
