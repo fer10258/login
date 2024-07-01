@@ -1,8 +1,8 @@
 [versions]
 agp = "8.4.2"
 junit = "4.13.2"
-junitVersion = "1.2.0"
-espressoCore = "3.6.0"
+junitVersion = "1.2.1"
+espressoCore = "3.6.1"
 appcompat = "1.7.0"
 material = "1.12.0"
 activity = "1.9.0"
@@ -13,6 +13,7 @@ mockitoCore = "3.12.4"
 playServicesAuth = "21.2.0"
 firebaseDatabase = "21.0.0"
 eventbus = "3.3.1"
+powermockModuleJunit4 = "2.0.9"
 
 [libraries]
 eventbus = { module = "org.greenrobot:eventbus", version.ref = "eventbus"  }
@@ -27,6 +28,8 @@ firebase-auth = { group = "com.google.firebase", name = "firebase-auth", version
 mockito-core = { module = "org.mockito:mockito-core", version.ref = "mockitoCore" }
 play-services-auth = { module = "com.google.android.gms:play-services-auth", version.ref = "playServicesAuth" }
 firebase-database = { group = "com.google.firebase", name = "firebase-database", version.ref = "firebaseDatabase" }
+powermock-api-mockito3 = { module = "org.powermock:powermock-api-mockito3", version = "2.0.8" }
+powermock-module-junit4 = { module = "org.powermock:powermock-module-junit4", version.ref = "powermockModuleJunit4" }
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }
