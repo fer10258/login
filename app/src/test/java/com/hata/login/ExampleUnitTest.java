@@ -18,7 +18,7 @@ public class ExampleUnitTest {
     public void checkStringAdd() {
         presenter = new HomePresenter()
         String newString = presenter.newText("Pitanga");
-        assertEquals("Pitanga ");
+        assertEquals("Pitanga ", newString);
     }
 
 }
