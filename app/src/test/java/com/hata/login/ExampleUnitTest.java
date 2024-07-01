@@ -2,6 +2,7 @@ package com.hata.login;
 
 import static org.junit.Assert.assertEquals;
 
+import com.hata.login.Presentation.HomeActivity.HomeContract;
 import com.hata.login.Presentation.HomeActivity.HomePresenter;
 
 import org.junit.Test;
@@ -13,10 +14,10 @@ import org.junit.Test;
  */
 public class ExampleUnitTest {
     HomePresenter presenter;
-
+    HomePresenter view;
     @Test
     public void checkStringAdd() {
-        presenter = new HomePresenter()
+        presenter = new HomePresenter((HomeContract.View) view);
         String newString = presenter.newText("Pitanga");
         assertEquals("Pitanga ", newString);
     }

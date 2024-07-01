@@ -6,6 +6,6 @@ public interface HomeContract {
     }
 
     interface Presenter {
-
+        public String newText(String text);
     }
 }

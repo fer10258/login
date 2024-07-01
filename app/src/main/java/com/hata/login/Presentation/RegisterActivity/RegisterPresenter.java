@@ -52,6 +52,7 @@ public class RegisterPresenter implements RegisterContract.Presenter {
     }
 
 
+
     private boolean isStringEmpty(String inputString) {
         return inputString == null || inputString.isEmpty();
     }
