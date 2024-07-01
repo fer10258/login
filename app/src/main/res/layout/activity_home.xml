@@ -24,4 +24,13 @@
         android:layout_centerHorizontal="true"
         android:layout_centerVertical="true"
         android:text="Home Screen" />
+
+    <Button
+        android:id="@+id/changeText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/homeTextview"
+        android:layout_centerInParent="true"
+        android:text="Change" />
+
 </RelativeLayout>

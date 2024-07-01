@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.TextView;
 
@@ -21,6 +22,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import com.hata.login.Presentation.LoginActivity.LoginActivity;
 import com.hata.login.Utils.FirebaseDatabaseClass;
+import com.hata.login.Utils.FirebaseRepository;
 import com.hata.login.databinding.ActivityHomeBinding;
 
 import org.greenrobot.eventbus.EventBus;
@@ -44,6 +46,7 @@ public class HomeActivity extends AppCompatActivity implements HomeContract.View
         binding = ActivityHomeBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
         lockButton = binding.lockScreen;
+        Button button = binding.changeText;
         mAuth = FirebaseAuth.getInstance();
         //Database
         FirebaseDatabaseClass.getFirebaseDatabaseClassInstance();
@@ -52,10 +55,11 @@ public class HomeActivity extends AppCompatActivity implements HomeContract.View
         messageGreeting = binding.homeTextview;
 
         // Inicialize o presenter após a inicialização do TextView
-        presenter = new HomePresenter(this);
+        presenter = new HomePresenter(this, FirebaseRepository.getInstance());
 
         // Declaração de funções:
         lockScreen();
+        changeTextButton();
     }
 
     private void lockScreen() {
@@ -64,6 +68,14 @@ public class HomeActivity extends AppCompatActivity implements HomeContract.View
             public void onClick(View v) {
                 Intent intent = new Intent(HomeActivity.this, LoginActivity.class);
                 startActivity(intent);
+            }
+        });
+    }
+    private void changeTextButton(){
+        binding.changeText.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                binding.homeTextview.setText("Pìtanga");
             }
         });
     }
