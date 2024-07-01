@@ -31,9 +31,9 @@ public class RegisterActivity extends AppCompatActivity implements RegisterContr
             @Override
             public void onClick(View v) {
                 presenter.registerUser(
-                        binding.name.getText().toString(),
-                        binding.email.getText().toString(),
-                        binding.password.getText().toString()
+                        binding.nameRegister.getText().toString(),
+                        binding.emailRegister.getText().toString(),
+                        binding.passwordRegister.getText().toString()
                 );
             }
         });

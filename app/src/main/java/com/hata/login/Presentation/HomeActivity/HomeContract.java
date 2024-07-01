@@ -2,10 +2,12 @@ package com.hata.login.Presentation.HomeActivity;
 
 public interface HomeContract {
     interface View {
-        void changeLayoutText();
+        void changeLayoutText(String text);
+        void navigateToLoginScreen();
     }
 
     interface Presenter {
-        public String newText(String text);
+        void changeTextButton();
+        void lockScreen();
     }
 }

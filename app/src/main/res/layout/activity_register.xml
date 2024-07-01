@@ -7,15 +7,15 @@
     tools:context=".Presentation.RegisterActivity.RegisterActivity">
 
     <EditText
-        android:id="@+id/name"
+        android:id="@+id/nameRegister"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/email"
+        android:layout_above="@+id/emailRegister"
         android:hint="name"
         android:minHeight="48dp" />
 
     <EditText
-        android:id="@+id/email"
+        android:id="@+id/emailRegister"
         android:layout_centerInParent="true"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -23,10 +23,10 @@
         android:minHeight="48dp" />
 
     <EditText
-        android:id="@+id/password"
+        android:id="@+id/passwordRegister"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/email"
+        android:layout_below="@+id/emailRegister"
         android:layout_centerHorizontal="true"
         android:hint="password"
         android:inputType="textPassword"
@@ -36,7 +36,7 @@
         android:id="@+id/register"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/password"
+        android:layout_below="@+id/passwordRegister"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="16dp"
         android:text="Registrar" />

@@ -3,21 +3,23 @@ package com.hata.login.Presentation.HomeActivity;
 import com.hata.login.Utils.FirebaseRepository;
 
 public class HomePresenter implements HomeContract.Presenter {
-    HomeContract.View view;
-    FirebaseRepository repository;
+    private HomeContract.View view;
+    private FirebaseRepository repository;
 
     public HomePresenter(HomeContract.View view, FirebaseRepository repository) {
         this.view = view;
         this.repository = repository;
+    }
 
+    @Override
+    public void changeTextButton() {
+        view.changeLayoutText("Pitanga");
+    }
 
-        view.changeLayoutText();
+    @Override
+    public void lockScreen() {
+        view.navigateToLoginScreen();
     }
-    public String newText(String text){
-        return text + " testing Junit";
-    }
-    public void getUser(){
-        repository.getDatabaseUser();
-    }
+
 
 }
