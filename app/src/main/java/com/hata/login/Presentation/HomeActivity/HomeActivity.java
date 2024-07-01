@@ -34,7 +34,7 @@ public class HomeActivity extends AppCompatActivity implements HomeContract.View
     DatabaseReference myRef;
     private FirebaseAuth mAuth;
     TextView messageGreeting;
-    HomePresenter presenter;
+    HomeContract.Presenter presenter;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {

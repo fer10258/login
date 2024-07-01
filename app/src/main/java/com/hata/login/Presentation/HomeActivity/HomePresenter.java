@@ -11,6 +11,8 @@ public class HomePresenter implements HomeContract.Presenter {
 
         view.changeLayoutText();
     }
-
+    public String newText(String text){
+        return text + " texting junit";
+    }
 
 }

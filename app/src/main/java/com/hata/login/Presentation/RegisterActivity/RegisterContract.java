@@ -8,5 +8,6 @@ public interface RegisterContract {
 
     interface Presenter {
         void registerUser(String name, String username, String password);
+        void newText(String text);
     }
 }

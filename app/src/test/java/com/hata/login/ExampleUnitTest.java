@@ -1,8 +1,10 @@
 package com.hata.login;
 
-import org.junit.Test;
+import static org.junit.Assert.assertEquals;
 
-import static org.junit.Assert.*;
+import com.hata.login.Presentation.HomeActivity.HomePresenter;
+
+import org.junit.Test;
 
 /**
  * Example local unit test, which will execute on the development machine (host).
@@ -10,8 +12,13 @@ import static org.junit.Assert.*;
  * @see <a href="http://d.android.com/tools/testing">Testing documentation</a>
  */
 public class ExampleUnitTest {
+    HomePresenter presenter;
+
     @Test
-    public void addition_isCorrect() {
-        assertEquals(4, 2 + 2);
+    public void checkStringAdd() {
+        presenter = new HomePresenter()
+        String newString = presenter.newText("Pitanga");
+        assertEquals("Pitanga ");
     }
+
 }
